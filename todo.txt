@@ -1,0 +1,12 @@
+Move all color config into one file. One return with multiple blocks sepereated by commas. Add folke/tokyonight to it
+Move lsp keymaps to sepereate file.
+Go through https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua to update your config.
+Install noice.nvim to make cmdline as a popup. This allows use to set cmdheight = 0 in remap.lua
+Installing lazydev.nvim may get rid of "Undefined global vim"
+Set description for <C-h> in telescope.actions.which_key as "Toggle Hidden"
+Replace lualine?
+Replace neo-tree with Sancks explorer
+Use more snacks.nvim and mini.nvim. Refer https://github.com/linkarzu/dotfiles-latest/blob/main/neovim/neobean/lua/plugins/.
+Can we use this? https://github.com/diogo464/kubernetes.nvim/
+Figure out snippets
+Figure out omni source used in blink-cmp
