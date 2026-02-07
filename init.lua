@@ -1,7 +1,7 @@
 local welcome = "Hello from ~/.config/nvim/init.lua"
 print(welcome)
 require("beths.vim-key-remap")
--- This will load ./lua/beths/vim-key-remap.lua or ./lua/beths/vim-key-remap/init.lua 
+-- This will load ./lua/beths/vim-key-remap.lua or ./lua/beths/vim-key-remap/init.lua
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -24,12 +24,12 @@ vim.opt.rtp:prepend(lazypath)
 --require("lazy").setup("plugins")
 -- This will load ./lua/plugins.lua and ./lua/plugins/*.lua
 require("lazy").setup({
-  spec = { { import = "plugins"}, },
+  spec = { { import = "plugins" } },
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = {"tokyonight-night"} },
+  install = { colorscheme = { "tokyonight-night" } },
   -- automatically check for plugin updates
-  checker = {enabled = true},
+  checker = { enabled = true },
 })
 
-require ("beths.vim-plugin-useage")
--- This will load ./lua/beths/vim-plugin-useage.lua or ./lua/beths/vim-plugin-useage/init.lua 
+require("beths.vim-plugin-useage")
+-- This will load ./lua/beths/vim-plugin-useage.lua or ./lua/beths/vim-plugin-useage/init.lua

@@ -2,7 +2,7 @@ return  {
   -- nvim-lspconfig enables lsp-client functionality on the editor.
   -- If LSP server is attached to current buffer, then the command :LspInfo will show details.
   'neovim/nvim-lspconfig',
-  dependencies = { { 'mason-org/mason.nvim', opts = {} }, 'mason-org/mason-lspconfig.nvim', 'WhoIsSethDaniel/mason-tool-installer.nvim', { 'j-hui/fidget.nvim', opts = {} }, 'saghen/blink.cmp', 'mfussenegger/nvim-ansible', },
+  dependencies = { { 'mason-org/mason.nvim', opts = {} }, 'mason-org/mason-lspconfig.nvim', 'WhoIsSethDaniel/mason-tool-installer.nvim', { 'j-hui/fidget.nvim', opts = {} }, 'saghen/blink.cmp', },
   -- dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim. Mason must be loaded before its dependents so we need to set it up here.
     -- mason is package manager that allows us to browse and install 3rd party lsp servers

@@ -200,7 +200,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Sourced from NormalNvim/lua/base/3-autocmds.lua and an old branch of AstroNvim/lua/astronvim/autocmds.lua
+-- Sourced from main branch of NormalNvim/lua/base/3-autocmds.lua and a the tag v3.45.3 of AstroNvim/lua/astronvim/autocmds.lua
 -- Maintain folds.
 local view_group = vim.api.nvim_create_augroup("normalnvim-view-saver", { clear = true })
 vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
@@ -225,3 +225,27 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
     end
   end,
 })
+
+-- Sourced from mfussenegger/nvim-ansible/blob/main/ftdetect/ansible.lua
+-- Files with .yaml and .yml extentions are have filetype 'yaml'. You can check this with the command ":set ft" or ":set filetype?"
+-- yamlls is applied to all files of yaml filetype.
+-- ansiblels is not activated for yaml filetype, thereby avoiding lsp-collision, and instead waits for yaml.ansible filetypes.
+-- You can change the filetype of buffer file with command ":set filetype=yaml.ansible". You cannot set the filetype with filename or fileextention.
+-- If your .yaml or .yml file matches the below pattern Neovim modifies the filetype causing ansiblels to become active.
+-- .* = Any char any number of times
+-- %. = literal "."
+-- a? = char "a" can be absent
+vim.filetype.add({
+    pattern = {
+      [".*/defaults/.*%.ya?ml"] = "yaml.ansible",
+      [".*/host_vars/.*%.ya?ml"] = "yaml.ansible",
+      [".*/group_vars/.*%.ya?ml"] = "yaml.ansible",
+      [".*/group_vars/.*/.*%.ya?ml"] = "yaml.ansible",
+      [".*/.*playbook.*%.ya?ml"] = "yaml.ansible",
+      [".*/playbooks?/.*%.ya?ml"] = "yaml.ansible",
+      [".*/roles?/.*/tasks?/.*%.ya?ml"] = "yaml.ansible",
+      [".*/roles?/.*/handlers?/.*%.ya?ml"] = "yaml.ansible",
+      [".*/tasks?/.*%.ya?ml"] = "yaml.ansible",
+      [".*/molecule/.*%.ya?ml"] = "yaml.ansible",
+    },
+  })
